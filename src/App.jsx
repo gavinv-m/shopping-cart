@@ -1,7 +1,13 @@
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
 import { useFilms } from './titles';
 
 // Exports to main.jsx
 export default function App() {
-  const films = useFilms();
-  return <></>;
+  return (
+    <>
+      <Header></Header>
+      <Outlet></Outlet>
+    </>
+  );
 }

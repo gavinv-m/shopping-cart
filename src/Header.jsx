@@ -1,22 +1,20 @@
+import CameraIcon from './icons/CameraIcon';
+import ShoppingCartIcon from './icons/ShoppingCart';
+import ProfileIcon from './icons/ProfileIcon';
+
 // Exports to App.jsx
-export default function Header({ score, bestScore }) {
+export default function Header() {
   return (
     <header>
-      <div className="title-and-scores">
-        <h1 className="header-title">Memory Reel</h1>
-        <div className="scores">
-          <span className="current-score">
-            Score<span className="colon">:</span> {score}
-          </span>
-          <span className="best-score">
-            Best Score<span className="colon">:</span> {bestScore}
-          </span>
-        </div>
+      <div className="icon-and-name">
+        <CameraIcon></CameraIcon>
+        <h1>The Collection</h1>
       </div>
-      <span className="game-rules">
-        Earn points by clicking the button on each movie poster, but don’t click
-        the same one twice!
-      </span>
+      <span>Shop the Collection</span>
+      <div className="cart-and-profile">
+        <ShoppingCartIcon></ShoppingCartIcon>
+        <ProfileIcon></ProfileIcon>
+      </div>
     </header>
   );
 }
