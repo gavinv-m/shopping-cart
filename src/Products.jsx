@@ -1,8 +1,10 @@
+import Grid from './Grid';
+
 // Exports to routes.jsx
 export default function Products() {
   return (
-    <>
-      <h1>Products Page</h1>
-    </>
+    <div>
+      <Grid></Grid>
+    </div>
   );
 }

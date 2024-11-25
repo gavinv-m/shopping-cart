@@ -35,6 +35,10 @@ const filmsPromise = (async () => {
         ...film,
         imgSrc: posterPath,
         vidSrc: videoSrc,
+        title: data.original_title,
+        description: data.overview,
+        country: data.production_countries[0].name,
+        year: data.release_date.split('-')[0],
       };
     } catch (error) {
       console.error(`Error fetching poster for ${film.id}:`, error);
