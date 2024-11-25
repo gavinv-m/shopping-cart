@@ -4,6 +4,7 @@ import { CartContext } from './App';
 
 // Exports to Grid
 export default function Card({ film }) {
+  const price = 39.99;
   const [quantity, setQuantity] = useState(0);
   const [cart, setCart] = useContext(CartContext);
 
@@ -19,6 +20,7 @@ export default function Card({ film }) {
           src: film.imgSrc,
           quantity: quantity,
           title: film.title,
+          price: price,
         };
         return updatedCart;
       } else {
@@ -30,6 +32,7 @@ export default function Card({ film }) {
             src: film.imgSrc,
             quantity: quantity,
             title: film.title,
+            price: price,
           },
         ];
       }
