@@ -29,11 +29,13 @@ const filmsPromise = (async () => {
       );
       const data = await response.json();
       const posterPath = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+      const backdropPath = `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
       const videoSrc = getTrailerSrc(data);
 
       return {
         ...film,
         imgSrc: posterPath,
+        backdropImgSrc: backdropPath,
         vidSrc: videoSrc,
         title: data.original_title,
         description: data.overview,
