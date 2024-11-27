@@ -1,0 +1,23 @@
+.container {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.container,
+section {
+  height: 100vh;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}

@@ -1,3 +1,5 @@
+import styles from './Homepage.module.css';
+
 // Exports to routes.jsx
 export default function Homepage() {
   const images = [
@@ -20,15 +22,11 @@ export default function Homepage() {
   ];
 
   return (
-    <div>
+    <div className={styles.container}>
       {images.map((image, index) => (
-        <div key={index}>
-          <img
-            src={image.src}
-            alt={image.alt}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </div>
+        <section key={index}>
+          <img src={image.src} alt={image.alt} style={{ width: '100%' }} />
+        </section>
       ))}
     </div>
   );

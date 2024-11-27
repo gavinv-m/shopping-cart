@@ -4,6 +4,7 @@ import ShoppingCartIcon from './icons/ShoppingCart';
 import ProfileIcon from './icons/ProfileIcon';
 import { Link } from 'react-router-dom';
 import { CartContext } from './App';
+import styles from './Header.module.css';
 
 const CartItems = () => {
   const [cart, setCart] = useContext(CartContext);
