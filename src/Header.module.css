@@ -47,3 +47,20 @@ a {
   gap: 3rem;
   justify-content: end;
 }
+
+.cartDropdownWrapper:hover .cartDropDown,
+.profileDropdownWrapper:hover .profileDropdown {
+  background-color: #ffffff;
+  opacity: 1;
+  transition: opacity 100ms;
+  transition-delay: 0ms;
+}
+
+.cartDropdown,
+.profileDropdown {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 400ms;
+  transition-delay: 300ms;
+  z-index: 20;
+}

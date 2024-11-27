@@ -19,7 +19,7 @@ const CartItems = () => {
   };
 
   return (
-    <div>
+    <div className={styles.cartDropdown}>
       {cart.map((item) => {
         return (
           <div key={item.id}>
@@ -46,7 +46,7 @@ const CartItems = () => {
 
 const ProfileMenu = () => {
   return (
-    <div>
+    <div className={styles.profileDropdown}>
       <h4>My Collection</h4>
       <span>Dashboard</span>
       <span>Orders</span>
@@ -81,28 +81,29 @@ export default function Header() {
         </Link>
         <div className={styles.icons}>
           <div
+            className={styles.cartDropdownWrapper}
             onMouseEnter={() => {
               handleMouseEnter('shoppingCart');
             }}
             onMouseLeave={handleMouseLeave}
           >
             <ShoppingCartIcon></ShoppingCartIcon>
+            <CartItems
+              className={activeHover === 'shoppingCart' ? styles.visible : ''}
+            />
           </div>
           <div
+            className={styles.profileDropdownWrapper}
             onMouseEnter={() => {
               handleMouseEnter('profileAvatar');
             }}
             onMouseLeave={handleMouseLeave}
           >
             <ProfileIcon></ProfileIcon>
+            <ProfileMenu
+              className={activeHover === 'profileAvatar' ? styles.visible : ''}
+            />
           </div>
-          {activeHover === 'shoppingCart' ? (
-            <CartItems></CartItems>
-          ) : activeHover === 'profileAvatar' ? (
-            <ProfileMenu></ProfileMenu>
-          ) : (
-            activeHover
-          )}
         </div>
       </div>
     </header>
