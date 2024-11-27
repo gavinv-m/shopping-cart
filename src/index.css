@@ -12,16 +12,13 @@
 }
 
 body {
-  background-color: #141414;
   height: 100vh;
-  margin: 0 auto;
+  margin: 0;
   max-width: 1500px;
   width: 100%;
 }
 
 #root {
-  padding: 2rem;
-
   /* Descendants: */
   display: flex;
   flex-direction: column;

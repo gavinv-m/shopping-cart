@@ -1,6 +1,7 @@
 .container {
   overflow: auto;
   scroll-snap-type: y mandatory;
+  width: 100vw;
 }
 
 .container::-webkit-scrollbar {
@@ -14,10 +15,24 @@ section {
 
 section {
   scroll-snap-align: start;
+
+  /* Create stacking context */
+  position: relative;
 }
 
 img {
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
+  opacity: 0.85;
   width: 100%;
+}
+
+.contentBlock {
+  z-index: 2;
+
+  /* Positioning: */
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
