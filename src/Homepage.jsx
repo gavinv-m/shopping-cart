@@ -12,7 +12,7 @@ export default function Homepage() {
       buttonText: 'Shop the Collection',
     },
     {
-      src: '../images/beau-travail.jpg',
+      src: '../images/beau.jpg',
       alt: 'Several men in military attire standing in a circle,',
       heading: 'Art House Cinema',
       text: `Delve into the world of Art House Cinema, where storytelling meets innovation. 
@@ -28,7 +28,7 @@ export default function Homepage() {
       buttonText: 'Enter New Hollywood',
     },
     {
-      src: '../images/vertigo.jpg',
+      src: '../images/vert.webp',
       alt: 'A man in a suit examines paintings in a museum',
       heading: 'Classic Cinema',
       text: `Step back in time with our Classic Cinema collection, featuring the golden age of film. 
