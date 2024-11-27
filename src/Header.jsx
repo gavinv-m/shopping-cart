@@ -69,40 +69,42 @@ export default function Header() {
 
   return (
     <header>
-      <div className="icon-and-name">
+      <div className={styles.logoAndName}>
         <Link to="/">
           <CameraIcon></CameraIcon>
         </Link>
         <h1>The Collection</h1>
       </div>
-      <Link to="/products">
-        <span>Shop the Collection</span>
-      </Link>
-      <div className="cart-and-profile">
-        <div
-          onMouseEnter={() => {
-            handleMouseEnter('shoppingCart');
-          }}
-          onMouseLeave={handleMouseLeave}
-        >
-          <ShoppingCartIcon></ShoppingCartIcon>
-        </div>
-        <div
-          onMouseEnter={() => {
-            handleMouseEnter('profileAvatar');
-          }}
-          onMouseLeave={handleMouseLeave}
-        >
-          <ProfileIcon></ProfileIcon>
+      <div className={styles.headerActions}>
+        <Link to="/products">
+          <span>Shop the Collection</span>
+        </Link>
+        <div className={styles.icons}>
+          <div
+            onMouseEnter={() => {
+              handleMouseEnter('shoppingCart');
+            }}
+            onMouseLeave={handleMouseLeave}
+          >
+            <ShoppingCartIcon></ShoppingCartIcon>
+          </div>
+          <div
+            onMouseEnter={() => {
+              handleMouseEnter('profileAvatar');
+            }}
+            onMouseLeave={handleMouseLeave}
+          >
+            <ProfileIcon></ProfileIcon>
+          </div>
+          {activeHover === 'shoppingCart' ? (
+            <CartItems></CartItems>
+          ) : activeHover === 'profileAvatar' ? (
+            <ProfileMenu></ProfileMenu>
+          ) : (
+            activeHover
+          )}
         </div>
       </div>
-      {activeHover === 'shoppingCart' ? (
-        <CartItems></CartItems>
-      ) : activeHover === 'profileAvatar' ? (
-        <ProfileMenu></ProfileMenu>
-      ) : (
-        activeHover
-      )}
     </header>
   );
 }

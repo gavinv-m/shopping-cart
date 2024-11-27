@@ -1,4 +1,49 @@
 header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0px 2rem;
   position: fixed;
+  top: 10px;
+  width: 100%;
   z-index: 10;
+}
+
+.logoAndName {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.logoAndName h1 {
+  left: 105px;
+  position: absolute;
+  top: 22px;
+}
+
+.headerActions {
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+}
+
+.icons {
+  display: flex;
+}
+
+h1,
+span {
+  color: #ffffff;
+  font-family: var(--font-family);
+}
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.icons {
+  gap: 3rem;
+  justify-content: end;
 }

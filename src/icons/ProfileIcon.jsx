@@ -12,7 +12,7 @@ export default function ProfileIcon({
         height={height}
         className={className}
         fill="none"
-        stroke="currentColor" // Adopts parent color
+        stroke="#ffffff"
         strokeWidth="1.91"
         strokeMiterlimit="10"
       >

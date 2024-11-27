@@ -1,7 +1,7 @@
 export default function CameraIcon({
   width = '64',
   height = '64',
-  color = '#231F20',
+  color = '#ffffff',
   className = 'camera-icon',
 }) {
   return (

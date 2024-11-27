@@ -29,7 +29,7 @@ const filmsPromise = (async () => {
       );
       const data = await response.json();
       const posterPath = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
-      const backdropPath = `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
+      const backdropPath = `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`;
       const videoSrc = getTrailerSrc(data);
 
       return {

@@ -1,7 +1,5 @@
 :root {
-  --font-godfather: 'The Godfather', sans-serif, system-ui;
-  --font-harry-potter: 'Harry Potter', sans-serif, system-ui;
-  --font-jurassic-park: 'Jurassic Park', sans-serif, system-ui;
+  --font-family: 'Mercury G1 Regular', Vegur, sans-serif, system-ui;
   font-size: 16px;
 }
 
@@ -26,19 +24,12 @@ body {
 }
 
 @font-face {
-  font-family: 'The Godfather';
-  src: url(../fonts/godfather/thegodfather-rgrk-webfont.woff2),
-    url(../fonts/godfather/thegodfather-rgrk-webfont.woff);
+  font-family: 'Mercury G1 Regular';
+  src: url(../fonts/Mercury\ Text\ G1\ Regular/.woff2),
+    url(../fonts/Mercury\ Text\ G1\ Regular/.woff);
 }
 
 @font-face {
-  font-family: 'Harry Potter';
-  src: url(../fonts/potter/harrypotter-ov4z-webfont.woff2),
-    url(../fonts/potter/harrypotter-ov4z-webfont.woff);
-}
-
-@font-face {
-  font-family: 'Jurassic Park';
-  src: url(../fonts/jurassic/jurassicpark-bl48-webfont.woff2),
-    url(../fonts/jurassic/jurassicpark-bl48-webfont.woff);
+  font-family: Vegur;
+  src: url(../public/fonts/webfonts_Vegur/Vegur.ttf.woff);
 }
