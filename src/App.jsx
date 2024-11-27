@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import styles from './App.module.css';
 
-export const CartContext = createContext();
+export const CartContext = createContext([[], () => {}]); // Provide a default value
 
 // Exports to main.jsx
 export default function App() {
