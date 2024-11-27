@@ -48,9 +48,11 @@ const ProfileMenu = () => {
   return (
     <div className={styles.profileDropdown}>
       <h4>My Collection</h4>
-      <span>Dashboard</span>
-      <span>Orders</span>
-      <span>Wishlist</span>
+      <ul>
+        <li>Dashboard</li>
+        <li>Orders</li>
+        <li>Wishlist</li>
+      </ul>
     </div>
   );
 };
@@ -88,9 +90,7 @@ export default function Header() {
             onMouseLeave={handleMouseLeave}
           >
             <ShoppingCartIcon></ShoppingCartIcon>
-            <CartItems
-              className={activeHover === 'shoppingCart' ? styles.visible : ''}
-            />
+            {activeHover === 'shoppingCart' && <CartItems></CartItems>}
           </div>
           <div
             className={styles.profileDropdownWrapper}
@@ -100,9 +100,7 @@ export default function Header() {
             onMouseLeave={handleMouseLeave}
           >
             <ProfileIcon></ProfileIcon>
-            <ProfileMenu
-              className={activeHover === 'profileAvatar' ? styles.visible : ''}
-            />
+            {activeHover === 'profileAvatar' && <ProfileMenu></ProfileMenu>}
           </div>
         </div>
       </div>

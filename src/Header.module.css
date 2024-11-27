@@ -48,11 +48,14 @@ a {
   justify-content: end;
 }
 
+.profileDropdownWrapper {
+  position: relative;
+}
+
 .cartDropdownWrapper:hover .cartDropDown,
 .profileDropdownWrapper:hover .profileDropdown {
-  background-color: #ffffff;
   opacity: 1;
-  transition: opacity 100ms;
+  transition: opacity 300ms;
   transition-delay: 0ms;
 }
 
@@ -61,6 +64,35 @@ a {
   position: absolute;
   opacity: 0;
   transition: opacity 400ms;
-  transition-delay: 300ms;
+  transition-delay: 600ms;
   z-index: 20;
+}
+
+.profileDropdown {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  right: 0;
+  padding: 40px;
+  top: 100%;
+}
+
+.profileDropdown h4 {
+  font-family: var(--font-family);
+  font-size: 1.7rem;
+}
+
+.profileDropdown ul {
+  font-family: var(--font-family);
+  list-style-type: none;
+
+  /* List items: */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profileDropdown li {
+  font-size: 1.3rem;
 }
