@@ -21,11 +21,20 @@ header {
   top: 22px;
 }
 
+.logoAndName h1:hover {
+  color: #a95c39;
+  cursor: pointer;
+}
+
 .headerActions {
   align-items: center;
   display: flex;
   gap: 3rem;
   justify-content: flex-end;
+}
+
+.headerActions span:hover {
+  color: #a95c39;
 }
 
 .icons {
@@ -48,11 +57,13 @@ a {
   justify-content: end;
 }
 
-.profileDropdownWrapper {
+.profileDropdownWrapper,
+.cartDropdownWrapper {
   position: relative;
+  cursor: pointer;
 }
 
-.cartDropdownWrapper:hover .cartDropDown,
+.cartDropdownWrapper:hover .cartDropdown,
 .profileDropdownWrapper:hover .profileDropdown {
   opacity: 1;
   transition: opacity 300ms;
@@ -61,21 +72,23 @@ a {
 
 .cartDropdown,
 .profileDropdown {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 400ms;
-  transition-delay: 600ms;
-  z-index: 20;
-}
-
-.profileDropdown {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  opacity: 0;
+  transition: opacity 400ms;
+  transition-delay: 600ms;
+  z-index: 20;
+
+  /* Positioning: */
+  position: absolute;
   right: 0;
-  padding: 40px;
   top: 100%;
+}
+
+.profileDropdown {
+  padding: 20px;
 }
 
 .profileDropdown h4 {
@@ -95,4 +108,55 @@ a {
 
 .profileDropdown li {
   font-size: 1.3rem;
+}
+
+.profileDropdown li:hover {
+  color: #a95c39;
+  cursor: pointer;
+}
+
+table {
+  border-spacing: 15px;
+}
+
+th,
+td {
+  font-family: var(--font-family);
+  text-align: left;
+}
+
+td {
+  vertical-align: top;
+}
+
+td img {
+  height: 75px;
+  width: 75px;
+}
+
+tfoot {
+  background-color: #a95c39;
+  color: #ffffff;
+  height: 50px;
+}
+
+tfoot td {
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.quantityAmt,
+.deleteBtn {
+  text-align: center;
+}
+
+.deleteBtn button {
+  border-style: none;
+  background-color: #ffffff;
+}
+
+.deleteBtn button:hover {
+  color: red;
+  cursor: pointer;
 }

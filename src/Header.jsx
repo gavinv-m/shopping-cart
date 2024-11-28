@@ -20,26 +20,48 @@ const CartItems = () => {
 
   return (
     <div className={styles.cartDropdown}>
-      {cart.map((item) => {
-        return (
-          <div key={item.id}>
-            <img src={item.src} style={{ width: 50, height: 50 }}></img>
-            <span>{item.title}</span>
-            <span>{item.price}</span>
-            <span>{item.quantity}</span>
-            <span>{item.price * item.quantity}</span>
-            <button
-              aria-label={`Remove ${item.title} from cart`}
-              onClick={() => {
-                deleteItem(item.id);
-              }}
-            >
-              &#10005;
-            </button>
-          </div>
-        );
-      })}
-      <div>Total: ${total}</div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {cart.map((item) => {
+            return (
+              <tr key={item.id} className={styles.cartItem}>
+                <td>
+                  <img src={item.src} alt={item.title}></img>
+                </td>
+                <td>{item.title}</td>
+                <td>{item.price}</td>
+                <td className={styles.quantityAmt}>{item.quantity}</td>
+                <td>{item.price * item.quantity}</td>
+                <td className={styles.deleteBtn}>
+                  <button
+                    aria-label={`Remove ${item.title} from cart`}
+                    onClick={() => deleteItem(item.id)}
+                  >
+                    &#10005;
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="6" className={styles.total}>
+              Total: ${total}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   );
 };
@@ -73,9 +95,9 @@ export default function Header() {
     <header>
       <div className={styles.logoAndName}>
         <Link to="/">
-          <CameraIcon></CameraIcon>
+          <CameraIcon />
+          <h1>The Collection</h1>
         </Link>
-        <h1>The Collection</h1>
       </div>
       <div className={styles.headerActions}>
         <Link to="/products">
