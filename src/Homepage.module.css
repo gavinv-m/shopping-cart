@@ -35,4 +35,40 @@ img {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  /* Descendants: */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contentBlock h1 {
+  font-size: 60px;
+  margin-bottom: 25px;
+}
+
+.contentBlock p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.contentBlock button {
+  background-color: #ffffff;
+  border-style: none;
+  font-size: 1.1rem;
+  font-family: var(--font-family);
+  height: 50px;
+  margin-top: 75px;
+  transition:
+    background-color 1s ease-out 0.25s,
+    color 1s ease-out 0.25s;
+  width: 250px;
+}
+
+.contentBlock button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

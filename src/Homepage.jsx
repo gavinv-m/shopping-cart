@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Homepage.module.css';
 
 // Exports to routes.jsx
@@ -45,7 +46,9 @@ export default function Homepage() {
           <div className={styles.contentBlock}>
             <h1>{image.heading}</h1>
             <p>{image.text}</p>
-            <button type="button">{image.buttonText}</button>
+            <Link to="/products">
+              <button type="button">{image.buttonText}</button>
+            </Link>
           </div>
         </section>
       ))}
