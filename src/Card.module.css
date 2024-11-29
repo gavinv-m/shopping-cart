@@ -1,0 +1,6 @@
+.card {
+  background-color: #ffffff;
+  height: 450px;
+  width: 300px;
+  z-index: 2;
+}

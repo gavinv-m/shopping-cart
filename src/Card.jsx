@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { CartContext } from './App';
+import styles from './Card.module.css';
 
 // Exports to Grid
 export default function Card({ film }) {
@@ -50,7 +51,7 @@ export default function Card({ film }) {
   };
 
   return (
-    <div>
+    <div className={styles.card}>
       {/* TODO: Move styling to modules */}
       <img src={film.imgSrc} style={{ width: 250, height: 140 }}></img>
       <h4>{film.title}</h4>

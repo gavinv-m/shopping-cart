@@ -27,7 +27,7 @@ export default function Products() {
   }, [backdrops.length]);
 
   return (
-    <div>
+    <div className={styles.productsPage}>
       <div className={`slider-container ${styles.sliderContainer}`}>
         {backdrops.map((backdrop, index) => {
           return (

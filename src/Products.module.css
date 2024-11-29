@@ -1,6 +1,11 @@
+.productsPage {
+  background-color: black;
+  position: relative;
+}
+
 .sliderContainer {
   width: 100%;
-  height: 400px;
+  height: 75vh;
   position: relative;
   overflow: hidden;
 }
