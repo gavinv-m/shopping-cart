@@ -9,6 +9,8 @@ export default function Card({ film }) {
   const [cart, setCart] = useContext(CartContext);
 
   const addToCart = () => {
+    if (quantity === 0) return;
+
     setCart((prevCart) => {
       const itemIndex = prevCart.findIndex((item) => item.id === film.id);
 
