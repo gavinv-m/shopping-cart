@@ -1,3 +1,14 @@
+.loadingScreen {
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+
+  /* Loading animation */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .productsPage {
   background-color: black;
   position: relative;

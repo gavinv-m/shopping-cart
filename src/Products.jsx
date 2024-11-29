@@ -1,11 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
-import Grid from './Grid';
 import { useFilms } from './titles';
+import Grid from './Grid';
+import ReactLoading from 'react-loading';
 import styles from './Products.module.css';
 
 // Exports to routes.jsx
 export default function Products() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
   const films = useFilms();
 
   // prettier-ignore
@@ -31,6 +33,15 @@ export default function Products() {
     });
   }, [films]);
 
+  // Monitor loading state
+  useEffect(() => {
+    if (films.length > 0 && backdrops.length > 0) {
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+  }, [films]);
+
   // Single effect to handle the slider
   useEffect(() => {
     if (backdrops.length === 0) return;
@@ -40,6 +51,13 @@ export default function Products() {
 
     return () => clearInterval(interval);
   }, [backdrops.length]);
+
+  if (loading)
+    return (
+      <div className={styles.loadingScreen}>
+        <ReactLoading type="bars"></ReactLoading>
+      </div>
+    );
 
   return (
     <div className={styles.productsPage}>
