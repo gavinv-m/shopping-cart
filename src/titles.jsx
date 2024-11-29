@@ -32,6 +32,8 @@ const filmsPromise = (async () => {
       const backdropPath = `https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`;
       const videoSrc = getTrailerSrc(data);
 
+      if (film.title === 'The Graduate') console.log(backdropPath);
+
       return {
         ...film,
         imgSrc: posterPath,

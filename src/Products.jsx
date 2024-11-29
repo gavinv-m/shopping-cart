@@ -8,12 +8,27 @@ export default function Products() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const films = useFilms();
 
+  // prettier-ignore
+  const replacementRules = [
+    {match: 'https://image.tmdb.org/t/p/w1280//rtVwkTqllcmyY4TVOycgVBHppWf.jpg', 
+      replacement: '../images/kimNovak.webp'},  // Vertigo
+    {match: 'https://image.tmdb.org/t/p/w1280//oVa4o0C5Fa7G36qHY48n3KHGBDX.jpg', 
+      replacement: '../images/thing.webp'}, // The Thing
+      {match: 'https://image.tmdb.org/t/p/w1280//hLq833CcqYjAluhFiSD2jQ5TpPh.jpg', 
+        replacement: '../images/graduate.jpg'} // The Graduate
+  ];
+
   const backdrops = useMemo(() => {
     if (!films?.length) return [];
-    return films.map((film) => ({
-      src: film.backdropImgSrc,
-      id: film.id,
-    }));
+    return films.map((film) => {
+      const rule = replacementRules.find((rule) =>
+        film.backdropImgSrc.includes(rule.match),
+      );
+      return {
+        src: rule ? rule.replacement : film.backdropImgSrc,
+        id: film.id,
+      };
+    });
   }, [films]);
 
   // Single effect to handle the slider
