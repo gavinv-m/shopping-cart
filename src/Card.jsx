@@ -53,15 +53,15 @@ export default function Card({ film }) {
   return (
     <div className={styles.card}>
       {/* TODO: Move styling to modules */}
-      <img src={film.imgSrc} style={{ width: 250, height: 140 }}></img>
+      <img src={film.imgSrc}></img>
       <h4>{film.title}</h4>
-      <p>{film.description}</p>
-      <div>
-        <span>{film.country}</span>
-        <span>{film.year}</span>
+      <p className={styles.excerpt}>{film.description}</p>
+      <div className={styles.filmDetails}>
+        <span className={styles.filmCountry}>{film.country}, </span>
+        <span className={styles.filmYear}> {film.year}</span>
       </div>
-      <div>
-        <div>
+      <div className={styles.quantityControls}>
+        <div className={styles.quantityBtns}>
           <button
             aria-label="Decrease quantity"
             type="button"
@@ -79,6 +79,7 @@ export default function Card({ film }) {
           </button>
         </div>
         <button
+          className={styles.addToCartBtn}
           type="button"
           aria-label="Add current item to cart"
           onClick={() => {

@@ -1,6 +1,96 @@
 .card {
   background-color: #ffffff;
-  height: 450px;
+  /* height: 450px; */
+  padding: 40px;
   width: 300px;
   z-index: 2;
+
+  /* Card items: */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  height: 140px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+h4 {
+  color: #333333;
+  font-family: var(--font-family);
+  font-size: 1.4rem;
+}
+
+.excerpt {
+  font-family: var(--font-family);
+  height: 80px;
+  margin: 16px 0;
+  overflow: clip;
+  text-align: center;
+  width: 100%;
+
+  /* Use these properties to handle multi-line text truncation 
+  Don't need to use text-overflow prop if using below */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to display */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.filmDetails {
+  height: 30px;
+  margin: 15px 0;
+}
+
+.filmCountry {
+  color: #a95c39;
+}
+
+.filmYear {
+  color: #333333;
+}
+
+.quantityControls {
+  display: flex;
+  gap: 25px;
+}
+
+.quantityBtns,
+.addToCartBtn {
+  background-color: #a95c39;
+  height: 50px;
+}
+
+.quantityBtns {
+  border-radius: 5px;
+  width: 75px;
+
+  /* Positioning: */
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.quantityBtns button,
+.addToCartBtn {
+  border-style: none;
+  background-color: #a95c39;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.quantityBtns span {
+  font-size: 2rem;
+}
+
+.addToCartBtn,
+.quantityBtns button:hover {
+  cursor: pointer;
+}
+
+.addToCartBtn {
+  border-radius: 5px;
+  width: 125px;
 }
